@@ -3,13 +3,16 @@ import os
 import discord 
 from dotenv import load_dotenv 
 
+from discord.ext import commands
+
 load_dotenv()
 TOKEN = os.getenv('DISCORD_TOKEN')
+GUILD= os.getenv('DISCORD_GUILD')
 
-client = discord.Client()
+bot = commands.Bot(command_prefix='/')
 
-@client.event
-async def on_ready():
-    print(f'{client.user} has connected to Discord!')
+@bot.command()
+async def fusca(ctx, arg):
+    await ctx.send(f'tapa em {arg}')
 
-client.run(TOKEN)
+bot.run(TOKEN)
