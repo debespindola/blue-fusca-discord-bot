@@ -15,6 +15,6 @@ bot = commands.Bot(command_prefix='/')
 
 @bot.command()
 async def tapa(ctx, arg):
-    await ctx.send(f'tapa em {arg} {random.choice(gifs)}')
+    await ctx.send(f'tapa em {arg} \n{random.choice(gifs)}')
 
 bot.run(TOKEN)
